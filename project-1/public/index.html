@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task project</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  
+        <link rel="stylesheet" href="/static/css/style.css">
+   </head>
+
+   <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">KOZ</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#something">Link1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#something">Link2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#something">Link3</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center">Task Management by KOZ</h1>
+    </header>
+
+    <div class="container">
+        <div class="row g-3 text-center my-4">
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h2 id="totalTasks">0</h2>
+                    <p class="text-muted">Total Tasks</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">    
+                <div class="card p-3 shadow-sm">
+                    <h2 id="activeTasks" class="text-primary">0</h2>
+                    <p class="text-muted">Active</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h2 id="completedTasks" class="text-success">0</h2>
+                    <p class="text-muted">Completed</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card p-4 shadow-sm mb-4">
+            <h5>Add new task</h5>
+            <label for="titleInput" class="form-label">Enter your task: </label>
+            <input id="titleInput" class="form-control mb-3" placeholder="Task title">
+            <textarea id="descInput" class="form-control mb-3" rows="2" placeholder="Task-description(optional)"></textarea>
+
+            <div class="mb-3">
+                <span class="priority-label">Priority:</span>
+                <ul class="priorityList">
+                    <li data-value="1">1</li>
+                    <li data-value="2">2</li>
+                    <li data-value="3">3</li>
+                    <li data-value="4">4</li>
+                    <li data-value="5">5</li>
+                </ul>
+            </div>
+
+
+            <div class="text-end">
+                <button class="btn btn-primary" id="addTaskBtn" onclick="createTask()">Add Task</button>
+            </div>
+
+        </div>
+
+        <div class="task-filter mb-3" id="filterButtons">
+            <button class="filter-btn active" data-filter="all" id="allid">All</button>
+            <button class="filter-btn acc" data-filter="active" id="activeid">Active</button>
+            <button class="filter-btn acc" data-filter="completed" id="complid">Completed</button>
+        </div>
+        
+        <!-- <div class="task-card">
+            <div class="task-left">
+               <div class="divcheck">
+                    <input 
+                    type="checkbox" 
+                    checked={task.completed}
+                    onChange={handleToggleComplete}
+                    />
+                </div>
+                <div>
+                    <h6 class="task-title">Sample task</h6>
+                    <p clsas="task-desc">Task description</p>
+                    <div class="prior-div">
+                        <p>Priority 3: Medium</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="task-right">
+                <button class="btn btn-sm" id="edittask">Edit</button>
+                
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+            </div>
+        </div> -->
+
+        <div id="tasksList"></div>
+        
+        <div class="modal fade" id="updateModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update Task</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div> 
+
+                        <div class="modal-body">
+                            <input id="updateTitle" class="form-control mb-2" placeholder="Title">
+                            <textarea id="updateDescription" class="form-control mb-2" placeholder="Description"></textarea>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="updateCompleted">
+                                <label class="form-check-label" for="updateCompleted">Completed</label>
+                                <select id="updatePriority" class="form-select mb-2">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-primary" onclick="submitUpdate()">Update</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script/script.js"></script>
+   </body>
+
+</html>

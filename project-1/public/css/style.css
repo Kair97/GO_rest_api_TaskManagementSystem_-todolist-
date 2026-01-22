@@ -1,0 +1,147 @@
+.priority-label {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.priorityList {
+    display: inline-flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.priorityList li {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d0d7e2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.priorityList li:hover {
+    background: #f0f4ff;
+    border-color: #2c6bed;
+}
+
+.priorityList li.active {
+    background: #fff3bf;
+    border-color: #f1c40f;
+    color: #000;
+}
+
+.priorityList li.green {
+    background: #d1f7d6;
+    border-color: #2ecc71;
+}
+
+.priorityList li.orange {
+    background: #fff3cd;
+    border-color: #f39c12;
+}
+
+.priorityList li.red {
+    background: #f8d7da;
+    border-color: #e74c3c;
+}
+
+.task-card{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid #e0e6f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: white;
+}
+
+#tcheckbox{
+    margin-top: 0.4rem;
+    width:1rem;
+    height:1rem;
+    margin-right: 0.8rem;
+}
+
+.task-left{
+    display: flex;
+    gap: 12px;
+
+    align-items:flex-start;
+
+}
+
+.prior-div p {
+    margin: 0;
+}
+
+.prior-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eff6ff;
+    padding: 6px;
+    font-size: 13px;
+    border-radius: 20px;
+    background: #f3f4f6;
+}
+
+.task-title{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.task-desc{
+    margin: 0;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.task-right{
+    display: flex;
+    margin-top:15px;
+    align-items: start;
+    height: 100%;
+    gap:2px;
+}
+
+#edittask{
+    border-color:aquamarine;
+}
+
+#edittask:hover{
+    background-color:aliceblue;
+}
+
+
+.task-filter{
+    display: inline-flex;
+    gap: 8px;
+}
+
+.filter-btn{
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #d0d7e2;
+    background: white;
+    font-weight: 500;
+    cursor: pointer;
+    color: #1f2a44;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover{
+    background: #f0f4ff;
+}
+
+.filter-btn.active{
+    background: #2c6bed;
+    color:white;
+    border-color: #2c6bed;
+}
